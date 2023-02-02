@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>MyApp</name>
+  <description>ma première app cordova</description>
+  <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Biga
+    </author>
+  <content src="index.html"/>
+
+  <access origin="*" />
+	<allow-navigation href="*" />
+
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <icon src="www/img/ico.jpg"/>
+  <splash src="www/img/splash.jpg" density="ldpi"/>
+  <preference name="ShowSplashScreenSpinner" value="false"/>
+  <preference name="SplashScreenDelay" value="5000"/>
+
+  <platform name="android">
+		<allow-intent href="market:*" />
+		
+		 <preference name = "AndroidInsecureFileModeEnabled" value = "true" />
+		<edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application"  xmlns:android="http://schemas.android.com/apk/res/android">
+			<application android:usesCleartextTraffic="true" />
+		</edit-config>
+
+	</platform>
+</widget>

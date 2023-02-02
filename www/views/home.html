@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="discution.css">
+        <link rel="stylesheet" href="../css/discution.css">
+        <title>Hello World</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./js/tail.js"></script>
+       <!--  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       
+    </head>
+    <body>
+        <div class=" flex flex-col h-screen bg-gradient-to-b from-violet-500 to-fuchsia-500 justify-center">
+
+            <!-- Home -->
+
+            <div id="1" class="header flou">
+            <span id="span" class="color">Géotchatte</span>
+            <div id="search" class="boxSearch none" >
+                <input type="text" name="search" placeholder="Recherche" >
+                <div class="searchIcon">
+                    <ion-icon name="search-outline"></ion-icon>
+                </div>
+            </div>
+            </div>
+            <div id="b1" class="test2 ">
+                <div id="box" class="siwpeBox">
+                    <h1>Aurelie</h1>
+                    <img src="../img/portrait.jpg" alt="" >
+                    <span class="bubble dislike" onclick="dislike()">
+                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                    </span>
+                    <span class="bubble like" onclick="like()">
+                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                    </span>
+                    
+                </div>
+            </div>
+
+            <!-- Profile -->
+
+            <div id="b2" class="test2 none">
+                <div id="box" class="siwpeBox flex justify-center ">
+                    <section class="boxImg">
+                        <img src="../img/portrait.jpg" alt="">
+                    </section>
+                    <section class="boxInfo">
+                        <div class="dashboard ">
+                            <span class="color">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <span>Nom</span>
+                            </span>
+                            <span class="color">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <span>prenom</span> 
+                            </span>
+                            <span class="color">
+                                <ion-icon name="person-circle-outline"></ion-icon>
+                                <span>Pseudo</span>
+                            </span>
+                            <span class="color">
+                                <ion-icon name="mail-outline"></ion-icon> 
+                                <span>Mail</span>
+                            </span>
+                        </div>
+
+                        <div class="games">
+                            <span class="color" >Aurelie</span>
+                            <span class="color">ABASSI</span>
+                            <span class="color">Ti Curl</span>
+                            <span class="color">Ticurl97@gmail.com</span>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+            <!-- Messages -->
+
+           <!--  <div id="3" class="header none">
+                <span>Messages</span>
+                <div class="boxSearch" >
+                    <input type="text" name="search" placeholder="Recherche" >
+                    <div class="searchIcon">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                </div>
+            </div> -->
+            <div id="b3" class="test2 none">
+                <div class="innerBox">
+                    <div class="Row">
+                        <img src="../img/logo1.png" alt="">
+                        <div class="BoxRow">
+                            <div class="">
+                                <h1>Name</h1>
+                                <span>Last message ...</span>
+                            </div>
+                            <span>1</span>
+                        </div>      
+                    </div>
+                    <hr />
+                    <div class="Row" onclick="window.location='./message.html'">
+                        <img src="../img/logo1.png" alt="">
+                        <div class="BoxRow">
+                            <div class="">
+                                <h1>Name</h1>
+                                <span>Last message ...</span>
+                            </div>
+                            <span>1</span>
+                        </div> 
+                    </div>
+                    <hr />
+                </div>
+            </div> 
+           
+            <!-- Parametres -->
+
+            <div id="b5" class="test2 none">
+                <div class="paramBox">
+    
+                </div>
+            </div>
+
+
+
+           <div class="navigation">
+                <ul>
+                    <li class="list active">
+                        <a href="#" onclick="display('b1')">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="text">Acceuil</span>
+                        </a>
+                    </li>
+                    <li class="list" onclick="display('b2')">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" onclick="display('b3')">
+                            <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                            <span class="text">Messages</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                            <span class="text">Photos</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" onclick="display('b5')">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="text">Parametres</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+        </div>
+       
+       <script>
+        const list = document.querySelectorAll('.list')
+        function activeLink(){
+            list.forEach((item)=>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        list.forEach((item)=>
+        item.addEventListener('click',activeLink))
+       </script>
+        <script src="cordova.js"></script>
+        <script src="../js/home.js"></script>
+    </body>
+</html>

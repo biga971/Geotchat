@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="../css/messages.css">
+        <link rel="stylesheet" href="../css/discution.css">
+        <title>Hello World</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./js/tail.js"></script>
+       <!--  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       
+    </head>
+    <body>
+        <div class=" flex flex-col h-screen bg-gradient-to-b from-violet-500 to-fuchsia-500 justify-center">
+
+            <div class="headerMessages">
+                <button class="return" onclick="window.location='./home.html'"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                <img src="logo.png" alt="">
+                <span>Nom</span>
+            </div>
+            <div class="test2 ">
+                <div class="messageBox">
+                    
+                    <div class="imessage">
+                        <p class="from-them">It was loud. We just laid there and said &ldquo;is this an earthquake? I think this is an earthquake.&rdquo;</p>
+                        <p class="from-me">Like is this an earthquake just go back to sleep</p>
+                        <p class="from-them margin-b_one">It&rsquo;s more like &ldquo;this is an earthquake. Check the Internet. Yup. Earthquake. This is the size. This is the epicenter. Check social media. Make sure the East Coast knows I&rsquo;m alive. Okay, try and go back to sleep.&rdquo;</p>
+                        <p class="from-me no-tail emoji">👍🏻</p>
+                        <p class="from-me">Glad you&rsquo;re safe</p>
+                    </div>
+                </div>
+                <div class="inputMessages">
+                    <div class="boxM" >
+                        <input type="text" name="search" placeholder="Recherche" >
+                        <div class="searchIcon">
+                            <ion-icon name="send-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="navigation">
+                <ul>
+                    <li class="list active">
+                        <a href="#" onclick="display('b1')">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="text">Acceuil</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" onclick="display('b3')">
+                            <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                            <span class="text">Messages</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                            <span class="text">Photos</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" onclick="display('b5')">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="text">Parametres</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+        </div>
+       
+       <script>
+        const list = document.querySelectorAll('.list')
+        function activeLink(){
+            list.forEach((item)=>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        list.forEach((item)=>
+        item.addEventListener('click',activeLink))
+       </script>
+        <script src="cordova.js"></script>
+        <script src="../js/home.js"></script>
+    </body>
+</html>

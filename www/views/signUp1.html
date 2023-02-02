@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./js/tail.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+       
+    </head>
+    <body>
+        <div class=" flex flex-col h-screen bg-gradient-to-b from-violet-500 to-fuchsia-500 justify-center"><!--  place-items-center justify-center-->
+            <div class="flex flex-col bg-white m-5 rounded-xl shadow-2xl">
+                <div class="flex flex-col items-center ">
+                    <div class="flex items-center pt-4 px-4">
+                        <div class="bg-slate-300 h-8 w-28 rounded-l-xl">
+                            <span class ="ml-2">Nom</span>
+                        </div>
+                        <div class="">
+                            <input id="inputName" class="border-4 border-slate-500 rounded-r-xl"/>
+                        </div>
+                    </div>
+                    <div class="flex items-center pt-1 px-4">
+                        <div class="">
+                            <input id="inputLastName" class="border-4 border-slate-500 rounded-l-xl" />
+                        </div>
+                        <div class="bg-slate-300 h-8 w-28 rounded-r-xl">
+                            <span class ="ml-2">Prenom</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center pt-4 px-4">
+                        <div class="bg-slate-300 h-8 w-28 rounded-l-xl">
+                            <span class ="ml-2">Pseudo</span>
+                        </div>
+                        <div class="">
+                            <input id="inputPseudo" class="border-4 border-slate-500 rounded-r-xl"/>
+                        </div>
+                    </div>
+                    <div class="flex items-center pt-1 px-4">
+                        <div class="">
+                            <input id="inputMail" class="border-4 border-slate-500 rounded-l-xl" /> 
+                        </div>
+                        <div class="bg-slate-300 h-8 w-28 rounded-r-xl">
+                            <span class ="ml-2">Mail</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center pt-4 px-4">
+                        <div class="bg-slate-300 h-8 w-28 rounded-l-xl">
+                            <span class ="ml-2">Mdp</span>
+                        </div>
+                        <div class="">
+                            <input id="inputPasswordForm" type="password" class="border-4 border-slate-500 rounded-r-xl"/>
+                        </div>
+                    </div>
+                    <div class="flex items-center pt-1 px-4">
+                        <div class="">
+                            <input id="inputConfirmPassword" type="password" class="border-4 border-slate-500 rounded-l-xl"/>
+                        </div>
+                        <div class="bg-slate-300 h-8 w-28 rounded-r-xl">
+                            <span>Confirmation</span>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="grid grid-cols-3 gap-4 pt-4 px-4 ">
+                        <div class=""><span>Pays</span></div>
+                        <div class="col-span-2"><input id="inputCountry" class="border-4 border-sky-500/75" /></div>
+                    </div>
+
+                    <div class="flex justify-around items-end" >
+                        <button id="buttonLoard" class="bg-sky-500/75 rounded-full text-white p-2 m-2">Charger Photo</button>
+                        <svg id="picture" class="stroke-cyan-500 h-10 m-2" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 
+                            15.1691 7.40805 15.4144 6.54944L16.5856 2.45056C16.8309 
+                            1.59196 17.6156 1 18.5086 1H29.4914C30.3844 1 31.1691 1.59195 
+                            31.4144 2.45056L32.5856 6.54944C32.8309 7.40804 33.6156 8 34.5086 
+                            8H42C44.7614 8 47 10.2386 47 13V34C47 36.7614 44.7614 39 42 39H6C3.23858 
+                            39 1 36.7614 1 34V13Z"
+                            stroke-width="2"></path> <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
+                        </svg>
+                    </div>
+                    
+                </div>
+    
+                <div class="  flex justify-end">
+                    <button id="buttonValidate" onclick="signUp()" class="bg-sky-500/75 rounded-full text-white p-2 m-2 ">Valider</button> 
+                </div>       
+            </div>
+        </div>
+        <script src="../cordova.js"></script>
+        <script src="../js/signUp1.js"></script>
+    </body>
+</html>
