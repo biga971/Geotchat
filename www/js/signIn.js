@@ -39,6 +39,7 @@ function signIn() {
     const url = "http://erickstattner.com/service/user.php"
     var login = document.getElementById("login").value;
     var password = document.getElementById("password").value;
+    window.location='./home.html'
     console.log('error')
 /*
     var bodyFormData = new FormData();
@@ -65,5 +66,5 @@ function signIn() {
 
 
      /* on wait */
-    window.location='../index.html'
+   
  }
