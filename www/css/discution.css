@@ -481,6 +481,32 @@ body
     margin-top: 10px;
 }
 
+.test2 .siwpeBox .boxImg2
+{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 200px;
+}
+
+.test2 .siwpeBox .boxImg3
+{
+    height: 150px;
+    width: 150px;
+    /* position: absolute; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 200px;
+}
+
 .test2 .siwpeBox .boxInfo
 {
     color:rgb(236, 234, 234);
