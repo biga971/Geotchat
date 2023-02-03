@@ -230,9 +230,8 @@ body
 {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
     overflow: auto;
-    /* height: 500px; */
+    height: 100vh;
     width: 100%;
     margin-bottom: 20px;
 }
