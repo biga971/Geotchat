@@ -17,7 +17,8 @@
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
        
     </head>
-    <body>
+    <body onload="lireswipe()">
+        
         <div class=" flex flex-col h-screen bg-gradient-to-b from-violet-500 to-fuchsia-500 justify-center">
 
             <!-- Home -->
@@ -32,13 +33,13 @@
             </div>
             </div>
             <div id="b1" class="test2 ">
-                <div id="box" class="siwpeBox">
-                    <h1>Aurelie</h1>
-                    <img style=" height: 100%;" src="../img/portrait.jpg" alt="" >
-                    <span class="bubble dislike" onclick="dislike()">
+                <div id="swipebox1" class="siwpeBox swipebox" >
+                    <h1 id="nomswipe">Aurelie</h1>
+                    <img id="photoswipe" style=" height: 100%;" src="../img/portrait.jpg" alt="" >
+                    <span class="bubble dislike" onclick="dislike(1)">
                         <ion-icon name="thumbs-down-outline"></ion-icon>
                     </span>
-                    <span class="bubble like" onclick="like()">
+                    <span class="bubble like" onclick="like(1)">
                         <ion-icon name="thumbs-up-outline"></ion-icon>
                     </span>
                     
@@ -50,7 +51,7 @@
             <div id="b2" class="test2 none">
                 <div id="box" class="siwpeBox flex justify-center ">
                     <section class="boxImg">
-                        <img src="../img/portrait.jpg" alt="">
+                        <img id="photoprofile" src="../img/portrait.jpg" alt="">
                     </section>
                     <section class="boxInfo">
                         <div class="dashboard ">
@@ -77,11 +78,12 @@
                         </div>
 
                         <div class="games">
-                            <span class="color">Aurelie</span>
-                            <span class="color">ABASSI</span>
-                            <span class="color">Ti Curl</span>
-                            <span class="color">Femme</span>
-                            <span class="color">Ticurl97@gmail.com</span>
+                            <span class="color" id="nomprofile">ABASSI</span>
+                            <span class="color" id="prenomprofile">Aurelie</span>
+                            
+                            <span class="color" id="pseudoprofile">Ti Curl</span>
+                            <span class="color" id="sexprofile">Femme</span>
+                            <span class="color" id="mailprofile">Ticurl97@gmail.com</span>
                         </div>
                     </section>
                 </div>
@@ -90,7 +92,7 @@
             <!-- Messages -->
 
             <div id="b3" class="test2 none">
-                <div class="innerBox">
+                <div class="innerBox" id="boxconvsteven">
                     <div class="Row">
                         <img src="../img/logo1.png" alt="">
                         <div class="BoxRow">
@@ -121,14 +123,14 @@
             <div id="b4" class="test2 none">
                 <div id="box" class="siwpeBox flex justify-center ">
                    <section class="boxImg">
-                        <img src="../img/portrait.jpg" alt="">
+                        <img id="photophoto3"  src="../img/portrait.jpg" alt="">
                     </section> 
                     <main>
                         <section class="boxImg2">
-                            <img src="../img/portrait.jpg" alt="">
+                            <img id="photophoto" src="../img/portrait.jpg" alt="">
                         </section> 
                         <section class="boxImg3">
-                            <img src="../img/portrait.jpg" alt="">
+                            <img id="photophoto2" src="../img/portrait.jpg" alt="">
                         </section> 
                     </main>
                     
@@ -169,7 +171,7 @@
             <div id="b5" class="test2 none">
                 <div id="box" class="siwpeBox flex justify-center ">
                     <section class="boxImg">
-                        <img src="../img/portrait.jpg" alt="">
+                        <img id="photoparametre"src="../img/portrait.jpg" alt="">
                     </section>
                     <section class="boxInfo">
                         <div class="dashboard ">
@@ -192,10 +194,10 @@
                         </div>
 
                         <div class="games">
-                            <span class="color" >Aurelie</span>
-                            <span class="color">ABASSI</span>
-                            <span class="color">Ti Curl</span>
-                            <span class="color">Ticurl97@gmail.com</span>
+                            <span class="color" id="prenomparametre">Aurelie</span>
+                            <span class="color" id="nomparametre">ABASSI</span>
+                            <span class="color" id="pseudoparametre">Ti Curl</span>
+                            <span class="color" id="mailparametre">Ticurl97@gmail.com</span>
                         </div>
                     </section>
                 </div>
@@ -206,31 +208,31 @@
            <div class="navigation">
                 <ul>
                     <li class="list active">
-                        <a href="#" onclick="display('b1')">
+                        <a href="#" onclick="display('b1'),printu()">
                             <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                             <span class="text">Acceuil</span>
                         </a>
                     </li>
-                    <li class="list" onclick="display('b2')">
+                    <li class="list" onclick="display('b2');lireprofile()">
                         <a href="#">
                             <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                             <span class="text">Profile</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" onclick="display('b3')">
+                        <a href="#" onclick="display('b3');lireconversation()">
                             <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
                             <span class="text">Messages</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" onclick="display('b4')">
+                        <a href="#" onclick="display('b4');lirephoto()">
                             <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
                             <span class="text">Photos</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" onclick="display('b5')">
+                        <a href="#" onclick="display('b5');lireparametre()">
                             <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                             <span class="text">Parametres</span>
                         </a>
@@ -250,7 +252,9 @@
         list.forEach((item)=>
         item.addEventListener('click',activeLink))
        </script>
+       
         <script src="cordova.js"></script>
+        
         <script src="../js/home.js"></script>
     </body>
 </html>
