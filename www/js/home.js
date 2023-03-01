@@ -309,6 +309,10 @@ function signUp() {
 
     })
     .then(response =>{  for (var i = 0; i < invit.length; i++){
+        if(document.querySelector('#Row_'+ talkto)){
+            console.log(document.querySelector('#Row_'+ talkto))
+
+        }
         let row=document.createElement('div');
                 //utilisateur[0]["idGeotchatteur"]==invit[0]["idGeotchatteur"]? p_msg.className="from-me" : p_msg.className="from-them"
         console.log(invit[i])
@@ -316,6 +320,7 @@ function signUp() {
         talkto = utilisateur["idGeotchatteur"] ==invit[i]["idInvite"] ?  invit[i]["idInviteur"]:invit[i]["idInvite"] ;
         row.setAttribute('onclick','sessionStorage.setItem("idtalkto",'+talkto+');console.log(sessionStorage.getItem("idtalkto"));window.location="./message.html"; /*liremsg('+talkto+')*/');
         row.setAttribute('className','Row ' + talkto)
+        row.setAttribute('className','Row_' + talkto)
                 //row.innerHTML=talkto;
 
         let rowimg=document.createElement('img')
@@ -340,6 +345,7 @@ function signUp() {
         },
     })
         .then(response => response.json())
+
     .then(response=>{console.log(response[0]);
          rowimg.src=response[0]["photo"];
         h1.innerHTML=response[0]["prenom"]})
