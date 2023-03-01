@@ -291,7 +291,7 @@ function signUp() {
 })
     .then(response => response.json())
     .then(response =>  {
-        stevenboxconversation.innerHTML='';
+        //stevenboxconversation.innerHTML='';
         for (var i = 0; i < response.length; i++){
 
 
@@ -309,18 +309,18 @@ function signUp() {
 
     })
     .then(response =>{  for (var i = 0; i < invit.length; i++){
-        if(document.querySelector('#Row_'+ talkto)){
-            console.log(document.querySelector('#Row_'+ talkto))
-
-        }
-        let row=document.createElement('div');
+        talkto = utilisateur["idGeotchatteur"] ==invit[i]["idInvite"] ?  invit[i]["idInviteur"]:invit[i]["idInvite"] ;
+        if(document.getElementById('Row_'+ talkto)=== null){
+            console.log(document.getElementById('Row_'+ talkto))
+            console.log('lol')
+            let row=document.createElement('div');
                 //utilisateur[0]["idGeotchatteur"]==invit[0]["idGeotchatteur"]? p_msg.className="from-me" : p_msg.className="from-them"
         console.log(invit[i])
                 //invit[0]["idInviteur"]
-        talkto = utilisateur["idGeotchatteur"] ==invit[i]["idInvite"] ?  invit[i]["idInviteur"]:invit[i]["idInvite"] ;
-        row.setAttribute('onclick','sessionStorage.setItem("idtalkto",'+talkto+');console.log(sessionStorage.getItem("idtalkto"));window.location="./message.html"; /*liremsg('+talkto+')*/');
+        
+        row.setAttribute('onclick','sessionStorage.setItem("idtalkto",'+talkto+');console.log(sessionStorage.getItem("idtalkto"));/*window.location="./message.html"; liremsg('+talkto+')*/');
         row.setAttribute('className','Row ' + talkto)
-        row.setAttribute('className','Row_' + talkto)
+        row.id='Row_' + talkto
                 //row.innerHTML=talkto;
 
         let rowimg=document.createElement('img')
@@ -357,6 +357,9 @@ function signUp() {
         afterBoxrow.appendChild(span)
         stevenboxconversation.appendChild(row);
         stevenboxconversation.appendChild(hr)
+
+        }
+        
         
     
     
