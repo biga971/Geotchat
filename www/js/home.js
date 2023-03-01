@@ -193,7 +193,9 @@ function like(id) {
 
     var swipebox = document.getElementById('swipebox'+id)
     
-    swipebox.style.transform = `translateX(500px) rotateY(40deg)`
+    //swipebox.style.transform = `translateX(500px) rotateY(40deg)`
+    swipebox.style.animationName = `swipeAnimation`
+    swipebox.style.animationDuration = `4s`
     setTimeout(function(){ effacerswipe(swipebox);
         if(document.querySelectorAll('.swipebox').length<=1){
         lireswipe();
@@ -230,7 +232,9 @@ function dislike(id) {
     //siwpeBox.style.transform = `translateX(-500px) rotateY(-40deg)`
 
     var swipebox = document.getElementById('swipebox'+id)
-    swipebox.style.transform = `translateX(-500px) rotateY(-40deg)`
+    //swipebox.style.transform = `translateX(-500px) rotateY(-40deg)`
+    swipebox.style.animationName = `swipeAnimationDislike`
+    swipebox.style.animationDuration = `4s`
     setTimeout(function(){ effacerswipe(swipebox); },1600)
 
 }
