@@ -601,3 +601,34 @@ body
 .activ{
     display: block;
 } */
+
+
+@keyframes swipeAnimation {
+    0%{
+        transform: rotate(0deg);
+        transform: translateX(0px) 
+    }
+    50%{
+        transform: rotate(-20deg)  translateX(250px);
+        /* transform: translateX(250px)  */
+    }
+    100%{
+        transform: rotate(-20deg) translateX(500px);
+       /*  transform: translateX(500px)  */
+    }
+}
+
+@keyframes swipeAnimationDislike {
+    0%{
+        transform: rotate(0deg);
+        transform: translateX(0px) 
+    }
+    50%{
+        transform: rotate(20deg)  translateX(-250px);
+        /* transform: translateX(250px)  */
+    }
+    100%{
+        transform: rotate(20deg) translateX(-500px);
+       /*  transform: translateX(500px)  */
+    }
+}
