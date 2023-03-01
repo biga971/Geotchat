@@ -318,7 +318,7 @@ function signUp() {
         console.log(invit[i])
                 //invit[0]["idInviteur"]
         
-        row.setAttribute('onclick','sessionStorage.setItem("idtalkto",'+talkto+');console.log(sessionStorage.getItem("idtalkto"));/*window.location="./message.html"; liremsg('+talkto+')*/');
+        row.setAttribute('onclick','sessionStorage.setItem("idtalkto",'+talkto+');console.log(sessionStorage.getItem("idtalkto"));window.location="./message.html"; /*liremsg('+talkto+')*/');
         row.setAttribute('className','Row ' + talkto)
         row.id='Row_' + talkto
                 //row.innerHTML=talkto;
