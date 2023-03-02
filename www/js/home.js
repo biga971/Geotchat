@@ -403,7 +403,7 @@ function lireswipe(){
     const url = "https://proj.ruben-jeaurat.fr/api/selectalent?id="
     
     //window.location='./home.html'  
-    fetch(url, {
+    fetch(url+utilisateur["idGeotchatteur"], {
         headers: { 'Accept': 'application/json'
     },
 })
@@ -411,7 +411,7 @@ function lireswipe(){
     .then(response=>{
     
         for (var i = 0; i < response.length; i++){
-            
+            if(true){
 
             let divbox = document.createElement('div');
             divbox.className="siwpeBox swipebox"
@@ -465,7 +465,7 @@ function lireswipe(){
 
 
 
-            
+            }
            
 
         }
