@@ -208,7 +208,7 @@ function like(id) {
         }},1000)
     //swipebox.style.opacity = "0";
 
-    var url = "https://proj.ruben-jeaurat.fr/api/modifyinvi?idInviteur"+utilisateur["idGeotchatteur"]+"&idInvite="+id+"&dateInvitation="+Date.now()+"&idEtat=2"
+    var url = "https://proj.ruben-jeaurat.fr/api/modifyinvi?idInviteur="+utilisateur["idGeotchatteur"]+"&idInvite="+id+"&dateInvitation="+Date.now()+"&idEtat=2"
     fetch(url, {
     method: 'get',
     headers: { 'Accept': 'application/json',"Content-Type": "multipart/form-data" 
@@ -400,7 +400,7 @@ function lirephoto(){
 }
 
 function lireswipe(){
-    const url = "https://proj.ruben-jeaurat.fr/selectgeo"
+    const url = "https://proj.ruben-jeaurat.fr/api/selectalent?id="
     
     //window.location='./home.html'  
     fetch(url, {
@@ -411,7 +411,7 @@ function lireswipe(){
     .then(response=>{
     
         for (var i = 0; i < response.length; i++){
-            if(response[i]["idGeotchatteur"]==5){
+            
 
             let divbox = document.createElement('div');
             divbox.className="siwpeBox swipebox"
@@ -465,7 +465,7 @@ function lireswipe(){
 
 
 
-            }
+            
            
 
         }
