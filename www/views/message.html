@@ -20,13 +20,13 @@
     <body onload="liremsg(sessionStorage.getItem('idtalkto'));setInterval(function(){ e = liremsg(sessionStorage.getItem('idtalkto'))}, 4000)">
         <div class=" flex flex-col h-screen bg-gradient-to-b from-violet-500 to-fuchsia-500 justify-center">
 
-            <div class="headerMessages">
+            <div class="headerMessages flou">
                 <button class="return" onclick="clearInterval(e); window.location='./home.html'"><ion-icon name="arrow-back-outline"></ion-icon></button>
                 <img /*src="logo.png"*/ alt="">
-                <span id="nommessage">Nom</span>
+                <span id="nommessage" class="color">Nom</span>
             </div>
             <div class="test2 ">
-                <div class="messageBox" id="messageBox">
+                <div class="messageBox " id="messageBox">
                     
                     <div class="imessage">
                         <p class="from-them">It was loud. We just laid there and said &ldquo;is this an earthquake? I think this is an earthquake.&rdquo;</p>
