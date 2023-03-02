@@ -142,7 +142,7 @@ function onFail(message) {
            .then(response =>response.json())
            .then(response =>{sessionStorage.setItem('utilisateur2',JSON.stringify(response[0]))})
            .then(console.log(sessionStorage.getItem('utilisateur2')))
-           .then(response =>{window.location.assign('./home.html')})
+           .then(response =>{window.location.assign('./views/home.html')})
            .catch(response=>{console.log(response );window.location='./signIn.html';return false})
         
             }
