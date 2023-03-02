@@ -58,7 +58,7 @@ function signUp() {
        bodyFormData.append('mdp', password);
        bodyFormData.append('pays', country);
        bodyFormData.append('photo', picture); */
-       const urlfinal = url+"nom="+name+"prenom="+lastname+"sexe="+sexe+"mail="+mail+"mdp="+password
+       const urlfinal = url+"nom="+name+"prenom="+lastname+"pseudo="+sexe+"mail="+mail+"mdp="+password
        axios({
          method: "post",
          url: urlfinal,
