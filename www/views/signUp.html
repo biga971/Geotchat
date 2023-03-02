@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../css/signUp.css">
         <title>Hello World</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./js/tail.js"></script>
+        <script src="../js/tail.js"></script>
         
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
        
@@ -26,7 +26,7 @@
                 <div class="box">
                     <div class="content">
                         <h2> Connexion </h2>
-                        <form>
+                        <div class="form">
                             <div class="inputBox">
                                 <input id="inputName" type="text" name="name" placeholder="Nom">
                             </div>
@@ -34,22 +34,21 @@
                                 <input id="inputLastName" type="text" name="Lastname" placeholder="Prenom">
                             </div>
                             <div class="inputBox">
-                                <input type="text" name="login" placeholder="Email">
+                                <input id="inputSexe" type="text" name="Sexe" placeholder="Sex">
                             </div>
                             <div class="inputBox">
-                                <input type="password" name="password" placeholder="Mot de passe">
+                                <input id="inputMail" type="text" name="login" placeholder="Email">
                             </div>
                             <div class="inputBox">
-                                <input type="password" name="password" placeholder="Confirmation mot de passe">
+                                <input id="inputPasswordForm" type="password" name="password" placeholder="Mot de passe">
                             </div>
-                            
+                             <div class="inputBox">
+                                <input id="inputConfirmPassword" type="password" name="password" placeholder="Confirmation mot de passe">
+                            </div>
                             <div class="inputBox">
-                                <input type="password" name="password" placeholder="Mot de passe">
+                                <input class="ajout" type="submit" value="Inscription" onclick="signUp()">
                             </div>
-                            <div class="inputBox">
-                                <input class="ajout" type="submit" value="Inscription" >
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -36,17 +36,20 @@ function onFail(message) {
 }
 
 function signUp() {
-     const url = "http://erickstattner.com/service/user.php"
+     //const url = "http://erickstattner.com/service/user.php"
+     const url = "https://proj.ruben-jeaurat.fr/api/modifygeo?"
      var name = document.getElementById("inputName").value;
      var lastname = document.getElementById("inputLastName").value;
-     var login = document.getElementById("inputPseudo").value;
+     var sexe = document.getElementById("inputSexe").value;
      var mail = document.getElementById("inputMail").value;
      var password = document.getElementById("inputPasswordForm").value;
      var passwordConfirm = document.getElementById("inputConfirmPassword").value;
-     var country = document.getElementById("inputCountry").value;
+     //var country = document.getElementById("inputCountry").value;
  
+     console.log("ok ")
      if (password == passwordConfirm) {
-        var bodyFormData = new FormData();
+        console.log("password confirm")
+       /*  var bodyFormData = new FormData();
        bodyFormData.append('action', 'create');
        bodyFormData.append('nom', name);
        bodyFormData.append('prenom', lastname);
@@ -54,11 +57,12 @@ function signUp() {
        bodyFormData.append('mail', mail);
        bodyFormData.append('mdp', password);
        bodyFormData.append('pays', country);
-       bodyFormData.append('photo', picture);
+       bodyFormData.append('photo', picture); */
+       const urlfinal = url+"nom="+name+"prenom="+lastname+"sexe="+sexe+"mail="+mail+"mdp="+password
        axios({
          method: "post",
-         url: url,
-         data: bodyFormData,
+         url: urlfinal,
+         /* data: bodyFormData, */
          headers: { "Content-Type": "multipart/form-data" },
        })
          .then(function (response) {

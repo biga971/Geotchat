@@ -95,7 +95,7 @@
     font-size: 1.5em;
 }
 
-.container .box .content form
+.container .box .content .form
 {
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@
     gap: 20px;
 }
 
-.container .box .content form .inputBox
+.container .box .content .form .inputBox
 {
     position: relative;
     width: 225px;
@@ -115,7 +115,7 @@
     15px 10px 15px rgba(0,0,0,0.025);
 }
 
-.container .box .content form .inputBox::before
+.container .box .content .form .inputBox::before
 {
     content: '';
     position: absolute;
@@ -127,7 +127,7 @@
     border-radius: 5px;
 }
 
-.container .box .content form .inputBox input
+.container .box .content .form .inputBox input
 {
     border: none;
     outline: none;
@@ -148,9 +148,9 @@
    font-size: 500;
 }
 
-.container .box .content form .inputBox:nth-child(6)
+.container .box .content .form .inputBox:nth-child(7)
 {
-   background: #66d0dd;
+   background: var(--violet-500)/* #66d0dd */;
    width: 150px;
    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.05),
    inset -2px -5px 1px rgba(255,255,255,0.01),
@@ -159,7 +159,7 @@
    transition: 0.5s;
 }
 
-.container .box .content form .inputBox:last-child:hover
+.container .box .content .form .inputBox:last-child:hover
 {
    width: 180px;
 }
@@ -175,7 +175,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #2c2b39;/* rgba(0, 0, 0,  0.75); var(--clr); */
+    background: var(--violet-500);/*#2c2b39;/* rgba(0, 0, 0,  0.75); var(--clr); */
     overflow: hidden;
 }
 
@@ -185,7 +185,7 @@
     position: absolute;
     width: 500px;
     height: 500px;
-    background-image: conic-gradient(transparent, transparent,transparent, #66d0dd);
+    background-image: conic-gradient(transparent, transparent,transparent, var(--fushia-500));
     animation: bounce 4s linear infinite;
     animation-delay: -2s;
 }
@@ -196,7 +196,7 @@
     position: absolute;
     width: 150px;
     height: 150px;
-    background-image: conic-gradient(transparent,transparent,transparent,#66d0dd);
+    background-image: conic-gradient(transparent,transparent,transparent, var(--fushia-500)/* var(--violet-500) */);
     animation: bounce 4s linear infinite ;
    /*  animation-delay: 2s; */
 }
