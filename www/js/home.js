@@ -411,7 +411,7 @@ function lireswipe(){
     .then(response=>{
     
         for (var i = 0; i < response.length; i++){
-            if(response[i]["idGeotchatteur"]==5){
+            if(true){
 
             let divbox = document.createElement('div');
             divbox.className="siwpeBox swipebox"
