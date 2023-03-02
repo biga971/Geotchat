@@ -94,6 +94,7 @@ function takePicturFromGalerie() {
     navigator.camera.getPicture(onSuccess, onFail, options)
 }
 
+
 function takePic() {
     const options = {
         quality: 25, 
