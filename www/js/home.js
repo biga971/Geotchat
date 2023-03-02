@@ -208,7 +208,7 @@ function like(id) {
         }},1000)
     //swipebox.style.opacity = "0";
 
-    var url = "https://proj.ruben-jeaurat.fr/api/modifyinvi?idInviteur"+utilisateur["idGeotchatteur"]+"&idInvite="+id+"&dateInvitation="+Date.now()+"&idEtat=2"
+    var url = "https://proj.ruben-jeaurat.fr/api/modifyinvi?idInviteur="+utilisateur["idGeotchatteur"]+"&idInvite="+id+"&dateInvitation="+Date.now()+"&idEtat=2"
     fetch(url, {
     method: 'get',
     headers: { 'Accept': 'application/json',"Content-Type": "multipart/form-data" 
