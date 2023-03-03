@@ -571,7 +571,7 @@ function lireparametre(){
 
             if(response[i]["idEtat"]==2){
 
-                if(response[i]["idInvite"] == utilisateur["idGeotchatteur"] || response[i]["idInviteur"] == utilisateur["idGeotchatteur"] ){
+                if(response[i]["idInvite"] == utilisateur["idGeotchatteur"] || response[i]["idInviteur"] == utilisateur["idGeotchatteur"] && response[i]["idInviteur"]!=utilisateur["idGeotchatteur"] ){
                     invit.push(response[i])
 
 
