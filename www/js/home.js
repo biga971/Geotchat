@@ -518,8 +518,8 @@ function lireparametre(){
     })
     .then(response =>{  for (var i = 0; i < invit.length; i++){
         talkto = utilisateur["idGeotchatteur"] ==invit[i]["idInvite"] ?  invit[i]["idInviteur"]:invit[i]["idInvite"] ;
-        if(document.getElementById('Row_'+ talkto)=== null){
-            console.log(document.getElementById('Row_'+ talkto))
+        if(document.getElementById('Row2_'+ talkto)=== null){
+            console.log(document.getElementById('Row2_'+ talkto))
             console.log('lol')
             let row=document.createElement('div');
                 //utilisateur[0]["idGeotchatteur"]==invit[0]["idGeotchatteur"]? p_msg.className="from-me" : p_msg.className="from-them"
@@ -527,12 +527,12 @@ function lireparametre(){
                 //invit[0]["idInviteur"]
         
         row.setAttribute('onclick','');
-        row.setAttribute('className','Row ' + talkto)
-        row.id='Row_' + talkto
+        row.setAttribute('class','Row ' + talkto)
+        row.id='Row2_' + talkto
                 //row.innerHTML=talkto;
 
         let rowimg=document.createElement('img')
-        rowimg.setAttribute('className','imagconv')
+        rowimg.setAttribute('class','imagconv')
 
         let Boxrow=document.createElement('div')
         Boxrow.className="BoxRow"
@@ -556,6 +556,7 @@ function lireparametre(){
 
     .then(response=>{console.log(response[0]);
         rowimg.src=response[0]["photo"];
+        
         h1.innerHTML=response[0]["prenom"]})
         row.appendChild(rowimg)
         row.appendChild(Boxrow)
