@@ -182,7 +182,7 @@ function afficherswipe(){
         lireswipe();
     }
     if(document.querySelector('.swipebox')!=null){
-        document.querySelector('.swipebox').style.opacity='1'
+        document.querySelector('.swipebox').style.display='flex'
         console.log(document.querySelector('.swipebox').id)
     }
 
@@ -206,7 +206,7 @@ function like(id) {
             document.querySelector('.swipebox').style.display='flex'
             
             console.log(document.querySelector('.swipebox').id)
-        }},1000)
+        }},1600)
     //swipebox.style.opacity = "0";
 
     var url = "https://proj.ruben-jeaurat.fr/api/modifyinvi?idInviteur="+utilisateur["idGeotchatteur"]+"&idInvite="+id+"&dateInvitation="+Date.now()+"&idEtat=2"
