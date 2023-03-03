@@ -12,8 +12,8 @@
 
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
-  <icon src="www/img/logo1.jpg"/>
-  <splash src="www/img/logo1.jpg" density="ldpi"/>
+  <icon src="www/img/ico.jpg"/>
+  <splash src="www/img/logo1.png" density="ldpi"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <preference name="SplashScreenDelay" value="5000"/>
 
