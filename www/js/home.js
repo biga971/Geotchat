@@ -3,6 +3,7 @@ document.addEventListener('deviceready', onDeviceReady, true);
 
 var sreen = "b1"
 var stevenboxconversation = document.getElementById("boxconvsteven")
+var stevenboxconversation2 = document.getElementById("boxconvsteven2")
 var talkto;
 var idtalkto;
 var e;
@@ -480,11 +481,102 @@ function lireswipe(){
 }
 
 function lireparametre(){
-    document.getElementById("prenomparametre").innerHTML=utilisateur["prenom"];
-    document.getElementById("nomparametre").innerHTML=utilisateur["nom"];
-    document.getElementById("pseudoparametre").innerHTML=utilisateur["pseudo"];
-    document.getElementById("mailparametre").innerHTML=utilisateur["mail"];
-    document.getElementById("photoparametre").src=utilisateur["photo"];
+    // document.getElementById("prenomparametre").innerHTML=utilisateur["prenom"];
+    // document.getElementById("nomparametre").innerHTML=utilisateur["nom"];
+    // document.getElementById("pseudoparametre").innerHTML=utilisateur["pseudo"];
+    // document.getElementById("mailparametre").innerHTML=utilisateur["mail"];
+    // document.getElementById("photoparametre").src=utilisateur["photo"];
+
+    const url = "https://proj.ruben-jeaurat.fr/selectinvi"
+    
+    var invit=[];
+    
+    
+    //window.location='./home.html'  
+    fetch(url, {
+        headers: { 'Accept': 'application/json'
+    },
+})
+    .then(response => response.json())
+    .then(response =>  {
+        //stevenboxconversation.innerHTML='';
+        for (var i = 0; i < response.length; i++){
+
+
+            if(response[i]["idEtat"]==2){
+
+                if(response[i]["idInvite"] == utilisateur["idGeotchatteur"] || response[i]["idInviteur"] == utilisateur["idGeotchatteur"] ){
+                    invit.push(response[i])
+
+
+                }
+            }
+
+
+        }
+
+    })
+    .then(response =>{  for (var i = 0; i < invit.length; i++){
+        talkto = utilisateur["idGeotchatteur"] ==invit[i]["idInvite"] ?  invit[i]["idInviteur"]:invit[i]["idInvite"] ;
+        if(document.getElementById('Row_'+ talkto)=== null){
+            console.log(document.getElementById('Row_'+ talkto))
+            console.log('lol')
+            let row=document.createElement('div');
+                //utilisateur[0]["idGeotchatteur"]==invit[0]["idGeotchatteur"]? p_msg.className="from-me" : p_msg.className="from-them"
+        console.log(invit[i])
+                //invit[0]["idInviteur"]
+        
+        row.setAttribute('onclick','');
+        row.setAttribute('className','Row ' + talkto)
+        row.id='Row_' + talkto
+                //row.innerHTML=talkto;
+
+        let rowimg=document.createElement('img')
+        rowimg.setAttribute('className','imagconv')
+
+        let Boxrow=document.createElement('div')
+        Boxrow.className="BoxRow"
+
+        let afterBoxrow=document.createElement('div')
+
+        let h1=document.createElement('h1')
+
+        let span=document.createElement('span')
+
+        let span2=document.createElement('span')
+
+        let hr=document.createElement('hr')
+
+        fetch("https://proj.ruben-jeaurat.fr/selectgeo?id="+talkto, 
+        {
+            headers: { 'Accept': 'application/json'
+        },
+    })
+        .then(response => response.json())
+
+    .then(response=>{console.log(response[0]);
+        rowimg.src=response[0]["photo"];
+        h1.innerHTML=response[0]["prenom"]})
+        row.appendChild(rowimg)
+        row.appendChild(Boxrow)
+        Boxrow.appendChild(afterBoxrow)
+        Boxrow.appendChild(span2)
+        afterBoxrow.appendChild(h1)
+        afterBoxrow.appendChild(span)
+        stevenboxconversation2.appendChild(row);
+        stevenboxconversation2.appendChild(hr)
+
+        }
+        
+        
+    
+    
+        
+
+}
+
+
+})
 
 
 }
