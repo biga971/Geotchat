@@ -488,8 +488,29 @@ function lireswipe(){
 
 
 }
+function afficheprofilepar(id){
+    document.getElementById("b55").style.display='flex'
+    stevenboxconversation2.style.display='none'
+    fetch("https://proj.ruben-jeaurat.fr/selectgeo?id="+id, 
+        {
+            headers: { 'Accept': 'application/json'
+        },
+    })
+    .then(response => response.json())
+
+    .then(response=>{
+    
+    document.getElementById("prenomparametre").innerHTML=response[0]["prenom"];
+    document.getElementById("nomparametre").innerHTML=response[0]["nom"];
+    document.getElementById("pseudoparametre").innerHTML=response[0]["pseudo"];
+    document.getElementById("mailparametre").innerHTML=response[0]["mail"];
+    document.getElementById("photoparametre").src=response[0]["photo"];})
+
+}
 
 function lireparametre(){
+    document.getElementById("b55").style.display='none'
+    stevenboxconversation2.style.display='flex'
     // document.getElementById("prenomparametre").innerHTML=utilisateur["prenom"];
     // document.getElementById("nomparametre").innerHTML=utilisateur["nom"];
     // document.getElementById("pseudoparametre").innerHTML=utilisateur["pseudo"];
@@ -535,7 +556,7 @@ function lireparametre(){
         console.log(invit[i])
                 //invit[0]["idInviteur"]
         
-        row.setAttribute('onclick','');
+        row.setAttribute('onclick','afficheprofilepar('+talkto+')');
         row.setAttribute('class','Row ' + talkto)
         row.id='Row2_' + talkto
                 //row.innerHTML=talkto;
