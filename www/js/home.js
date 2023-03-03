@@ -333,12 +333,12 @@ function signUp() {
                 //invit[0]["idInviteur"]
         
         row.setAttribute('onclick','sessionStorage.setItem("idtalkto",'+talkto+');console.log(sessionStorage.getItem("idtalkto"));window.location="./message.html"; /*liremsg('+talkto+')*/');
-        row.setAttribute('className','Row ' + talkto)
+        row.setAttribute('class','Row ' + talkto)
         row.id='Row_' + talkto
                 //row.innerHTML=talkto;
 
         let rowimg=document.createElement('img')
-        rowimg.setAttribute('className','imagconv')
+        rowimg.setAttribute('class','imagconv')
 
         let Boxrow=document.createElement('div')
         Boxrow.className="BoxRow"
@@ -348,6 +348,7 @@ function signUp() {
         let h1=document.createElement('h1')
 
         let span=document.createElement('span')
+        span.innerHTML='Last message ...'
 
         let span2=document.createElement('span')
 
