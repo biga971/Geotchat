@@ -504,7 +504,9 @@ function afficheprofilepar(id){
     document.getElementById("nomparametre").innerHTML=response[0]["nom"];
     document.getElementById("pseudoparametre").innerHTML=response[0]["pseudo"];
     document.getElementById("mailparametre").innerHTML=response[0]["mail"];
-    document.getElementById("photoparametre").src=response[0]["photo"];})
+    document.getElementById("photoparametre").src=response[0]["photo"];
+    document.getElementById("buttoncontatc").setAttribute('onclick','ajouterconctacct('+response[0]["idGeotchatteur"]+')');})
+
 
 }
 function ajouterconctacct(id){
@@ -518,17 +520,25 @@ function ajouterconctacct(id){
     .then(response => response.json())
     .then(response =>  {
         for(var i = 0; i < response.length; i++){
-            if((response[i]["idInviteur"]==utilisateur["idGeotchatteur"] || response[i]["idInviteur"]==id) && (response[i]["idInvite"]== utilisateur["idGeotchatteur"]||response[i]["idInvite"]==id)){
-                fetch("https://proj.ruben-jeaurat.fr/api/selectinvi?idInvitation="+response[i]["idInvitation"]+"?idEtat="+1, {
+            if((response[i]["idInviteur"]==utilisateur["idGeotchatteur"] || response[i]["idInviteur"]==id) && (response[i]["idInvite"]== utilisateur["idGeotchatteur"]||response[i]["idInvite"]==id) && (response[i]["idEtat"]==2)){
+                console.log(response[i])
+                console.log(utilisateur["idGeotchatteur"])
+                console.log(id)
+                console.log(response[i]["idInviteur"])
+                console.log(response[i]["idInvite"])
+
+                fetch("https://proj.ruben-jeaurat.fr/modifyinvi?idInvitation="+response[i]["idInvitation"]+"&idEtat=1", {
                     headers: { 'Accept': 'application/json'
                     },
                 })
                 .then(response => console.log(response.json()))
+                .then(response =>{lireparametre();stevenboxconversation2.innerHTML=''} )
 
 
             }
         }
     })
+    
 }
 
 function lireparametre(){
