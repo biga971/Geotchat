@@ -255,6 +255,8 @@ body
     width: 50px;
     position: relative;
     margin-top: 10px;
+    margin-right: 10px;
+
 }
 
 .innerBox hr
