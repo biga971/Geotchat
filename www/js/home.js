@@ -507,6 +507,29 @@ function afficheprofilepar(id){
     document.getElementById("photoparametre").src=response[0]["photo"];})
 
 }
+function ajouterconctacct(id){
+    const url = "https://proj.ruben-jeaurat.fr/selectinvi"
+    //var messageBoxt=stevenboxconversation;
+    //window.location='./home.html'  
+    fetch(url, {
+        headers: { 'Accept': 'application/json'
+        },
+    })
+    .then(response => response.json())
+    .then(response =>  {
+        for(var i = 0; i < response.length; i++){
+            if((response[i]["idInviteur"]==utilisateur["idGeotchatteur"] || response[i]["idInviteur"]==id) && (response[i]["idInvite"]== utilisateur["idGeotchatteur"]||response[i]["idInvite"]==id)){
+                fetch("https://proj.ruben-jeaurat.fr/api/selectinvi?idInvitation="+response[i]["idInvitation"]+"?idEtat="+1, {
+                    headers: { 'Accept': 'application/json'
+                    },
+                })
+                .then(response => console.log(response.json()))
+
+
+            }
+        }
+    })
+}
 
 function lireparametre(){
     document.getElementById("b55").style.display='none'
