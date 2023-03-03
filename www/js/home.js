@@ -107,6 +107,14 @@ function takePic() {
 function onSuccess (imageData) {
     var image = document.getElementById ('logo') ; 
     image.src = "data:image/jpeg;base64," + imageData;
+    var url = 'https://proj.ruben-jeaurat.fr/modifygeo?idGeotchatteur=5&photo='+image
+
+    fetch(url, {
+        headers: { 'Accept': 'application/json'
+    },
+})
+    .catch(response => console.log(response))
+
 }
 
 function onFail(message) {
