@@ -550,6 +550,7 @@ function lireparametre(){
         let h1=document.createElement('h1')
 
         let span=document.createElement('span')
+        span.innerHTML='Appuyez pour voir profil'
 
         let span2=document.createElement('span')
 
