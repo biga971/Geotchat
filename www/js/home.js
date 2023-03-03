@@ -433,7 +433,10 @@ function lireswipe(){
             divbox.style.display='none';
 
             let h1nomnomswipe =document.createElement('h1');
-            h1nomnomswipe.innerHTML=response[i]["prenom"];
+            let spankm=document.createElement('span');
+            h1nomnomswipe.innerHTML=response[i]["prenom"]
+            h1nomnomswipe.appendChild(spankm);
+            spankm.innerHTML="  "+Math.trunc(calcCrow(utilisateur["DerniereLatitude"],utilisateur["DerniereLongitude"],response[i]["DerniereLatitude"],response[i]["DerniereLongitude"])) + " km"
 
             let imgswipe = document.createElement('img');
             imgswipe.style.height='100%';
