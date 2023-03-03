@@ -236,7 +236,7 @@ function dislike(id) {
     //swipebox.style.transform = `translateX(-500px) rotateY(-40deg)`
     swipebox.style.animationName = `swipeAnimationDislike`
     swipebox.style.animationDuration = `4s`
-    setTimeout(function(){ effacerswipe(swipebox); },1600)
+    setTimeout(function(){ effacerswipe(swipebox); afficherswipe()},1600)
 
 }
 

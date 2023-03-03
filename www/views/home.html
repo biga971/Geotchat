@@ -105,13 +105,9 @@
                         <img id="photophoto3"  src="../img/portrait.jpg" alt="">
                     </section> 
                     <main>
-                        <section class="boxImg2">
-                            <!-- <img id="photophoto" src="../img/portrait.jpg" alt="">
-                        </section> 
-                        <section class="boxImg3">
-                            <img id="photophoto2" src="../img/portrait.jpg" alt=""> -->
-
-                        <div>
+                        <section class="boxImg2" >
+                             <img id="photophoto" src="../img/portrait.jpg" alt="" style="display: none;"> 
+                             <div>
                             <button id="buttonLoard" class="bg-sky-500/75 rounded-full text-white p-2 m-2">Charger Photo</button>
                             <svg id="picture" class="stroke-cyan-500 h-10 m-2" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 13C1 10.2386 3.23858 8 6 8H13.4914C14.3844 8 
@@ -123,6 +119,12 @@
                                  stroke-width="2"></path> <circle cx="24" cy="23" r="9" stroke-width="2"></circle>
                             </svg>
                         </div>
+                        </section> 
+
+                        <section class="boxImg3" style="display: none;">
+                            <img id="photophoto2" src="../img/portrait.jpg" alt="">
+
+                       
                         </section>
                         
                     </main>
@@ -162,11 +164,29 @@
             <!-- Parametres -->
 
             <div id="b5" class="test2 none">
+                <div class="innerBox" id="boxconvsteven">
+                    <div class="innerBox">
+                            <div class="Row">
+                                <img src="../img/logo1.png" alt="">
+                                <div class="BoxRow">
+                                    <div class="">
+                                        <h1>Name</h1>
+                                        <span>Last message ...</span>
+                                    </div>
+                                    <span>1</span>
+                                </div>      
+                            </div>
+                    
+                        </div>
+                </div>
+            </div> 
+
+            <div id="b55" class="test2 none" style="display: none;">
                 <div id="box" class="siwpeBox flex justify-center ">
-                    <section class="boxImg">
+                    <section class="boxImg" >
                         <img id="photoparametre"src="../img/portrait.jpg" alt="">
                     </section>
-                    <section class="boxInfo">
+                    <section class="boxInfo" style="display: none;">
                         <div class="dashboard " style="display: none;">
                             <span class="color">
                                 <ion-icon name="person-outline"></ion-icon>
@@ -192,20 +212,9 @@
                             <span class="color" id="pseudoparametre">Ti Curl</span>
                             <span class="color" id="mailparametre">Ticurl97@gmail.com</span>
                         </div>
-                        <div class="innerBox" id="boxconvsteven">
-                            <div class="Row">
-                                <img src="../img/logo1.png" alt="">
-                                <div class="BoxRow">
-                                    <div class="">
-                                        <h1>Name</h1>
-                                        <span>Last message ...</span>
-                                    </div>
-                                    <span>1</span>
-                                </div>      
-                            </div>
-                    
-                        </div>
+                        
                     </section>
+                    
                 </div>
             </div>
 
@@ -240,7 +249,7 @@
                     <li class="list">
                         <a href="#" onclick="display('b5');lireparametre()">
                             <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                            <span class="text">Parametres</span>
+                            <span class="text">Invitation</span>
                         </a>
                     </li>
                     <div class="indicator"></div>
